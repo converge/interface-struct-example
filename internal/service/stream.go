@@ -17,7 +17,6 @@ func NewStreamer(httpClient HTTPClientProvider) Streamer {
 	}
 }
 
-
 func (streamer Streamer) StartStream() error {
 
 	out, _ := os.Create("output.txt")

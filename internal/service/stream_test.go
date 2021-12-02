@@ -1,9 +1,12 @@
 package service
 
-import "testing"
+import (
+	"example-delete-it/internal/mocks"
+	"testing"
+)
 
 func TestNewStreamer(t *testing.T) {
-	mockHTTP := MockHTTPClient{}
+	mockHTTP := mocks.MockHTTPClient{}
 	s := NewStreamer(&mockHTTP)
 
 	_ = s.StartStream()

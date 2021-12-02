@@ -1,18 +1,13 @@
 package service
 
 import (
-	"net/http"
+	"example-delete-it/internal/mocks"
 	"testing"
 )
 
-type MockHTTPClient struct {}
-
-func (mock *MockHTTPClient) Do(_ *http.Request) (*http.Response, error) {
-	return nil, nil
-}
 
 func TestNewDownloader(t *testing.T) {
-	mockHTTP := MockHTTPClient{}
+	mockHTTP := mocks.MockHTTPClient{}
 	s := NewDownloader(&mockHTTP)
 
 	_ = s.GetIem()
